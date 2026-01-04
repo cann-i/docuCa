@@ -43,11 +43,11 @@
             <div class="logo">
                 <a href="#">docu<span>CA</span></a>
             </div>
-            <div class="menu-toggle" id="mobile-menu">
+            <button class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </div>
+            </button>
             <nav class="nav">
                 <ul>
                     <li><a href="#home">Home</a></li>
@@ -212,17 +212,6 @@
     </section>
 
     <!-- Footer -->
-    <script>
-        const menuToggle = document.querySelector('#mobile-menu');
-        const nav = document.querySelector('.nav');
-        const authButtons = document.querySelector('.auth-buttons');
-
-        menuToggle.addEventListener('click', function() {
-            menuToggle.classList.toggle('is-active');
-            nav.classList.toggle('active');
-            authButtons.classList.toggle('active');
-        });
-    </script>
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
