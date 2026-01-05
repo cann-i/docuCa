@@ -36,6 +36,7 @@
     </script>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
 
     <!-- Header -->
     <header class="header">
@@ -67,10 +68,11 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content animate-on-scroll">
+    <main id="main-content" tabindex="-1">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content animate-on-scroll">
                 <span class="tagline-badge">Premium Financial Consulting</span>
                 <h1>Strategic Financial Clarity for Gujarat’s Growing Enterprises</h1>
                 <p>Connect with <strong>CA. Rahul Mehta, FCA</strong>. Expert financial structuring and regulatory compliance for manufacturing and textile sectors.</p>
@@ -198,31 +200,21 @@
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="section bg-dark text-white testimonial-section">
-        <div class="container">
-            <div class="testimonial-content text-center animate-on-scroll">
-                <i class="fas fa-quote-left fa-2x quote-icon"></i>
-                <blockquote>
-                    "Rahul’s understanding of the Gujarat regulatory landscape saved our export business significantly during the last fiscal year. His approach is direct, mathematical, and result-oriented."
-                </blockquote>
-                <cite>— Managing Director, Shivam Textiles Pvt. Ltd.</cite>
+        <!-- Testimonials -->
+        <section class="section bg-dark text-white testimonial-section">
+            <div class="container">
+                <div class="testimonial-content text-center animate-on-scroll">
+                    <i class="fas fa-quote-left fa-2x quote-icon"></i>
+                    <blockquote>
+                        "Rahul’s understanding of the Gujarat regulatory landscape saved our export business significantly during the last fiscal year. His approach is direct, mathematical, and result-oriented."
+                    </blockquote>
+                    <cite>— Managing Director, Shivam Textiles Pvt. Ltd.</cite>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <script>
-        const menuToggle = document.querySelector('#mobile-menu');
-        const nav = document.querySelector('.nav');
-        const authButtons = document.querySelector('.auth-buttons');
-
-        menuToggle.addEventListener('click', function() {
-            menuToggle.classList.toggle('is-active');
-            nav.classList.toggle('active');
-            authButtons.classList.toggle('active');
-        });
-    </script>
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">

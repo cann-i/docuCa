@@ -1,4 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Mobile Menu Toggle
+    const menuToggle = document.querySelector('#mobile-menu');
+    const nav = document.querySelector('.nav');
+    const authButtons = document.querySelector('.auth-buttons');
+
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            menuToggle.classList.toggle('is-active');
+            nav.classList.toggle('active');
+            authButtons.classList.toggle('active');
+        });
+    }
+
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
     const icon = themeToggle ? themeToggle.querySelector('i') : null;
