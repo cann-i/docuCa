@@ -9,33 +9,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script>
-        // Immediately checking for theme preference to avoid FOUC
-        (function() {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'dark'); // Using data attribute for potentially cleaner CSS targeting if needed, but primarily class
-                // We need to wait for body to exist to add class, but documentElement is safer here for immediate CSS variables if we switched strategy.
-                // However, standard practice for body class:
-            }
-        })();
-        // We can't add class to body yet because body doesn't exist.
-        // Better approach: Add class to documentElement (html tag)
-    </script>
+
+    <!-- Preload Hero Image for LCP Optimization -->
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80">
+
     <script>
         // Add js-enabled class to document element to enable animations safely
         document.documentElement.classList.add('js-enabled');
-
-        // Theme initialization
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
-            document.body.classList.add('dark-mode');
-            // Wait, document.body is null here in head.
-            // We should use document.documentElement for the class or move this script to start of body.
-        }
     </script>
 </head>
 <body>
+    <script>
+        // Theme initialization moved to start of body to prevent FOUC and ensure document.body exists
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                document.body.classList.add('dark-mode');
+            }
+        })();
+    </script>
 
     <!-- Header -->
     <header class="header">
