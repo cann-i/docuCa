@@ -8,34 +8,30 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script>
-        // Immediately checking for theme preference to avoid FOUC
-        (function() {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'dark'); // Using data attribute for potentially cleaner CSS targeting if needed, but primarily class
-                // We need to wait for body to exist to add class, but documentElement is safer here for immediate CSS variables if we switched strategy.
-                // However, standard practice for body class:
-            }
-        })();
-        // We can't add class to body yet because body doesn't exist.
-        // Better approach: Add class to documentElement (html tag)
-    </script>
-    <script>
-        // Add js-enabled class to document element to enable animations safely
-        document.documentElement.classList.add('js-enabled');
 
-        // Theme initialization
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
-            document.body.classList.add('dark-mode');
-            // Wait, document.body is null here in head.
-            // We should use document.documentElement for the class or move this script to start of body.
+    <!-- Optimized Font Awesome Loading -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'" />
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </noscript>
+
+    <script>
+        // Enable JS animations and set data attribute for theme immediately
+        document.documentElement.classList.add('js-enabled');
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
         }
     </script>
+
+    <script src="js/script.js" defer></script>
 </head>
 <body>
+    <script>
+        // Apply dark mode class to body immediately to prevent FOUC
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
 
     <!-- Header -->
     <header class="header">
@@ -212,17 +208,6 @@
     </section>
 
     <!-- Footer -->
-    <script>
-        const menuToggle = document.querySelector('#mobile-menu');
-        const nav = document.querySelector('.nav');
-        const authButtons = document.querySelector('.auth-buttons');
-
-        menuToggle.addEventListener('click', function() {
-            menuToggle.classList.toggle('is-active');
-            nav.classList.toggle('active');
-            authButtons.classList.toggle('active');
-        });
-    </script>
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -250,6 +235,5 @@
             </div>
         </div>
     </footer>
-    <script src="js/script.js"></script>
 </body>
 </html>
