@@ -36,6 +36,7 @@
     </script>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
 
     <!-- Header -->
     <header class="header">
@@ -67,6 +68,7 @@
         </div>
     </header>
 
+    <main id="main-content">
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
@@ -210,19 +212,9 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
-    <script>
-        const menuToggle = document.querySelector('#mobile-menu');
-        const nav = document.querySelector('.nav');
-        const authButtons = document.querySelector('.auth-buttons');
-
-        menuToggle.addEventListener('click', function() {
-            menuToggle.classList.toggle('is-active');
-            nav.classList.toggle('active');
-            authButtons.classList.toggle('active');
-        });
-    </script>
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">

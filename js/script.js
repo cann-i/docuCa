@@ -3,6 +3,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
     const icon = themeToggle ? themeToggle.querySelector('i') : null;
 
+    // Mobile Menu Toggle
+    const menuToggle = document.querySelector('#mobile-menu');
+    const nav = document.querySelector('.nav');
+    const authButtons = document.querySelector('.auth-buttons');
+
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            menuToggle.classList.toggle('is-active');
+            nav.classList.toggle('active');
+            authButtons.classList.toggle('active');
+        });
+    }
+
     // Sync icon with current theme state (set in HEAD script)
     if (body.classList.contains('dark-mode')) {
         if (icon) {
