@@ -37,6 +37,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Mobile Menu Toggle
+    const menuToggle = document.querySelector('#mobile-menu');
+    const nav = document.querySelector('.nav');
+    const authButtons = document.querySelector('.auth-buttons');
+
+    if (menuToggle && nav && authButtons) {
+        menuToggle.addEventListener('click', function() {
+            menuToggle.classList.toggle('is-active');
+            nav.classList.toggle('active');
+            authButtons.classList.toggle('active');
+        });
+    }
+
     // Scroll Animations using Intersection Observer
     const observerOptions = {
         threshold: 0.1,
