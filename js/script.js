@@ -54,4 +54,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
     animatedElements.forEach(el => observer.observe(el));
+
+    // Mobile Menu Toggle
+    const menuToggle = document.querySelector('#mobile-menu');
+    const nav = document.querySelector('.nav');
+    const authButtons = document.querySelector('.auth-buttons');
+
+    if (menuToggle && nav && authButtons) {
+        menuToggle.addEventListener('click', function() {
+            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', !isExpanded);
+
+            menuToggle.classList.toggle('is-active');
+            nav.classList.toggle('active');
+            authButtons.classList.toggle('active');
+        });
+    }
 });
